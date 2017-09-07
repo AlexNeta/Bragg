@@ -49,6 +49,7 @@ class MainWindow(BoxLayout):
             fps = 60
         Clock.schedule_interval(self.update, 1. / fps)
 
+        # For plotting:
         #while True:
         #    self.update(0)
 
