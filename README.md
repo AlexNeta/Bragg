@@ -2,5 +2,5 @@
 * This Bragg grating consists only of three layers
 * thickness and refractive index can be adjusted
 
-![Bragg Grating](http://slideplayer.org/slide/852991/2/images/13/Faser-Bragg-Gitter+(Fiber+Bragg+Grating,+FBG):.jpg)
-[source](http://slideplayer.org/slide/852991/2/images/13/Faser-Bragg-Gitter+(Fiber+Bragg+Grating,+FBG):.jpg)
+![Bragg Grating](http://mydocs.epri.com/docs/CorporateDocuments/Newsletters/NUC/2010-09/diagram_02.jpg)
+[source](http://mydocs.epri.com/docs/CorporateDocuments/Newsletters/NUC/2010-09/diagram_02.jpg)
