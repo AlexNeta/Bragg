@@ -47,9 +47,10 @@ class MainWindow(BoxLayout):
             fps = float(self.fps.text)
         else:
             fps = 60
-        #Clock.schedule_interval(self.update, 1. / fps)
-        while True:
-            self.update(0)
+        Clock.schedule_interval(self.update, 1. / fps)
+
+        #while True:
+        #    self.update(0)
 
         x = np.arange(10)
         y = x**2
@@ -110,11 +111,13 @@ class MainWindow(BoxLayout):
         I1_r = I1_t * self.get_r(n1, n2)
         I2_r = I2_t * self.get_r(n2, n1)
 
-        #lam = self.lam.value
+        lam = self.lam.value
 
+        """
         self.fre += 1
         print(self.fre - self.fre_min)
         lam = self.fre / sc.c
+        """
 
         w = 2 * sc.pi * sc.c / (lam * 1e-9)
         k = 2 * sc.pi / (lam * 1e-9)
@@ -171,6 +174,7 @@ class MainWindow(BoxLayout):
         self.line_color.append((0, 1, 0, 1))
         self.maxi = float(max(y0_r_sum**2)**.5)
 
+        """
         self.plt_intens.append((lam, self.maxi))
         if self.fre >= self.fre_max:
             print("Show")
@@ -178,6 +182,7 @@ class MainWindow(BoxLayout):
             self.plt_intens = []
             plt.show()
             sys.exit()
+        """
 
         # Place Material of different refractive index
         height = 200
