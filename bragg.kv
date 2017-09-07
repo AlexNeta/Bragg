@@ -1,0 +1,87 @@
+#: import np numpy
+
+MainWindow:
+
+<MainWindow>:
+    bragg: bragg
+    orientation: "vertical"
+    fps: fps
+    d0: d0
+    d1: d1
+    d2: d2
+    n0: n0
+    n1: n1
+    n2: n2
+    lam: lam
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: 1., None
+        height: 130
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                text: "Time: {}s MaxReflectedIntensity: {}".format(round(root.time, 3), round(root.maxi, 3))
+            Label:
+                text: "delta time:"
+            TextInput:
+                id: fps
+                text: "60"
+                multiline: False
+                input_filter: "float"
+                on_text_validate: root.reschedule()
+            Label:
+                text: "wavelength (nm):"
+            Slider:
+                id: lam
+                value: 400
+                min: 1
+                max: 1000
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                text: "d0 (nm):"
+            TextInput:
+                id: d0
+                text: "100"
+                multiline: False
+                input_filter: "int"
+            Label:
+                text: "d1:"
+            TextInput:
+                id: d1
+                text: "100"
+                multiline: False
+                input_filter: "int"
+            Label:
+                text: "d2:"
+            TextInput:
+                id: d2
+                text: "100"
+                multiline: False
+                input_filter: "int"
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                text: "n0:"
+            TextInput:
+                id: n0
+                text: "1"
+                multiline: False
+                input_filter: "float"
+            Label:
+                text: "n1:"
+            TextInput:
+                id: n1
+                text: "1.3"
+                multiline: False
+                input_filter: "float"
+            Label:
+                text: "n2:"
+            TextInput:
+                id: n2
+                text: "1.9"
+                multiline: False
+                input_filter: "float"
+
+    RelativeLayout:
+        id: bragg
