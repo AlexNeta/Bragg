@@ -36,9 +36,9 @@ class MainWindow(BoxLayout):
     n2 = ObjectProperty()
 
     fre = ObjectProperty()
-    fre_min = NumericProperty(299792458000000)
-    fre_max = NumericProperty(299792458000100)
-    fre = NumericProperty(299792458000000)
+    fre_min = NumericProperty(1)
+    fre_max = NumericProperty(2)
+    fre0 = NumericProperty(1)
     plt_intens = ListProperty()
     maxi = NumericProperty(0)
 
@@ -111,13 +111,14 @@ class MainWindow(BoxLayout):
         I1_r = I1_t * self.get_r(n1, n2)
         I2_r = I2_t * self.get_r(n2, n1)
 
-        lam = self.lam.value
 
-        """
-        self.fre += 1
-        print(self.fre - self.fre_min)
-        lam = self.fre / sc.c
-        """
+        #self.fre0 += 0.001
+        #print(self.fre0 - self.fre_min)
+        #lam = self.fre0 / sc.c
+
+        fre = self.fre.value
+        lam = fre / sc.c
+
 
         w = 2 * sc.pi * sc.c / (lam * 1e-9)
         k = 2 * sc.pi / (lam * 1e-9)
@@ -176,7 +177,7 @@ class MainWindow(BoxLayout):
 
         """
         self.plt_intens.append((lam, self.maxi))
-        if self.fre >= self.fre_max:
+        if self.fre0 >= self.fre_max:
             print("Show")
             plt.plot(np.array(self.plt_intens).T[0], np.array(self.plt_intens).T[1])
             self.plt_intens = []

@@ -12,7 +12,7 @@ MainWindow:
     n0: n0
     n1: n1
     n2: n2
-    lam: lam
+    fre: fre
     BoxLayout:
         orientation: "vertical"
         size_hint: 1., None
@@ -30,12 +30,12 @@ MainWindow:
                 input_filter: "float"
                 on_text_validate: root.reschedule()
             Label:
-                text: "wavelength (nm):"
+                text: "frequency (Hz):"
             Slider:
-                id: lam
-                value: 400
-                min: 1
-                max: 1000
+                id: fre
+                value: root.fre0
+                min: root.fre_min
+                max: root.fre_max
         BoxLayout:
             orientation: "horizontal"
             Label:
