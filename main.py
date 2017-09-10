@@ -16,6 +16,8 @@ import scipy.constants as sc
 import matplotlib.pyplot as plt
 import sys
 
+# Change in loop
+
 class MainWindow(BoxLayout):
     bragg = ObjectProperty()
     graph = ObjectProperty()
